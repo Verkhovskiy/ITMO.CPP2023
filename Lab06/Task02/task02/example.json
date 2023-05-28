@@ -1,0 +1,12 @@
+{
+  "name": "Test",
+  "nothing": null,
+  "answer": {
+    "everything": 10
+  },
+  "companies": [ "Info", "TM" ],
+  "user": {
+    "name": "solo",
+    "active": true
+  }
+}
