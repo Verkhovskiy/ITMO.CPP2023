@@ -5,7 +5,7 @@
 class Triangle
 {
     private:
-        Dot dots[3];
+        Dot* dots[3];
         double sideLengths[3];
     public:
         Triangle() {
@@ -14,18 +14,18 @@ class Triangle
             std::cout << "First coordinate (Format: x y): ";
             std::cin >> x;
             std::cin >> y;
-            dots[0] = Dot(x,y);
+            dots[0] = new Dot(x,y);
             std::cout << "Second coordinate (Format: x y): ";
             std::cin >> x;
             std::cin >> y;
-            dots[1] = Dot(x,y);
+            dots[1] = new Dot(x,y);
             std::cout << "Third coordinate (Format: x y): ";
             std::cin >> x;
             std::cin >> y;
-            dots[2] = Dot(x,y);
-            sideLengths[0] = dots[0].distanceTo(dots[1]);
-            sideLengths[1] = dots[1].distanceTo(dots[2]);
-            sideLengths[2] = dots[2].distanceTo(dots[0]);
+            dots[2] = new Dot(x,y);
+            sideLengths[0] = dots[0]->distanceTo(*dots[1]);
+            sideLengths[1] = dots[1]->distanceTo(*dots[2]);
+            sideLengths[2] = dots[2]->distanceTo(*dots[0]);
         }
         void printSides() {
             std::cout << "The lengths of triangle sides are: " << std::endl << sideLengths[0] << std::endl << sideLengths[1] << std::endl << sideLengths[2];
