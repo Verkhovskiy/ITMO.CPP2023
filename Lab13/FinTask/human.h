@@ -12,7 +12,7 @@ class human {
             this->second_name = second_name;
         }
         // Получение ФИО человека
-        std::string get_full_name()
+        virtual std::string get_full_name()
         {
             std::ostringstream full_name;
             full_name << this->last_name << " "
